@@ -4,19 +4,16 @@
 
 ## Дифференциальное уравнение
 
-$$
--\dfrac{\partial}{\partial x} \left( a(x, y) \dfrac{\partial u}{\partial x}\right)
--\dfrac{\partial}{\partial y} \left( a(x, y) \dfrac{\partial u}{\partial y}\right)
-+ g(x, y) \, u = f
-$$
+$$-\dfrac{\partial}{\partial x} \left( a(x, y) \dfrac{\partial u}{\partial x}\right)-\dfrac{\partial}{\partial y} \left( a(x, y) \dfrac{\partial u}{\partial y}\right)
++g(x, y) \, u = f$$
 
 Диффееренциальное уравнение определено на множестве $\Omega$, имеющем форму буквы **Т**, где границы области задаются точками $(0,1), \, (1,1), \, (1, \frac{1}{2}), \, (\frac{2}{3}, \, \frac{1}{2}), \, (\frac{2}{3}, 0), \,(\frac{1}{3}, 0), \, (\frac{1}{3}, \, \frac{1}{2}), \, (0, \frac{1}{2})$
 
 $$
 a(x, y) =
 \begin{cases}
-10^3, \; если \; (x, y) \in [\frac{1}{6}, \frac{5}{6}] \times [\frac{2}{3}, \frac{5}{6}] \\
-1, \; иначе
+10^3, \\; если \\; (x, y) \in [\frac{1}{6}, \frac{5}{6}] \times [\frac{2}{3}, \frac{5}{6}] \\
+1, \\; иначе
 \end{cases}
 $$
 
@@ -30,18 +27,18 @@ $$
 Уравнение аппроксимируется следующей разностной схемой:
 
 $$
-\dfrac{a_{i, j} \left( \dfrac{u_{i, j} - u_{i-1, j}}{h_x} \right)
-- a_{i+1, j}  \left( \dfrac{ u_{i+1, j} - u_{i, j} }{h_x}   \right)}{h_x}
-+ \dfrac{a_{i, j} \left( \dfrac{u_{i, j} - u_{i, j-1}}{h_y} \right)
-- a_{i, j+1}  \left( \dfrac{ u_{i, j+1} - u_{i, j} }{h_y}   \right)}{h_y}
+\dfrac{a_{i, j} \left( \dfrac{u_{i, j} - u_{i-1, j}}{h_x} \right)-a_{i+1, j}  \left( \dfrac{ u_{i+1, j} - u_{i, j} }{h_x}   \right)}{h_x}
++\dfrac{a_{i, j} \left( \dfrac{u_{i, j} - u_{i, j-1}}{h_y} \right)
+-a_{i, j+1}  \left( \dfrac{ u_{i, j+1} - u_{i, j} }{h_y}   \right)}{h_y}
 +g_{i, j} \, u_{i, j} = f_{i, j}
 $$
 
 Слагаемые группируются для вычисления коэффициентов матрицы:
+
 $$
 u_{i, j} \left( \dfrac{a_{i, j}+a_{i+1, j}}{h_{x}^{2}} + \dfrac{a_{i, j}+a_{i, j+1}}{h_{y}^{2}} + g_{i,j}\right)
-- u_{i, j-1} \dfrac{a_{i, j}}{h_{y}^{2}} - u_{i-1, j} \dfrac{a_{i, j}}{h_{x}^{2}}
-- u_{i+1, j} \dfrac{a_{i+1, j}}{h_{x}^{2}} - u_{i, j+1} \dfrac{a_{i, j+1}}{h_{y}^{2}} = f_{i, j}
+-u_{i, j-1} \dfrac{a_{i, j}}{h_{y}^{2}} - u_{i-1, j} \dfrac{a_{i, j}}{h_{x}^{2}}
+-u_{i+1, j} \dfrac{a_{i+1, j}}{h_{x}^{2}} - u_{i, j+1} \dfrac{a_{i, j+1}}{h_{y}^{2}} = f_{i, j}
 $$
 
 Матрица получается пложительно-определенная, симметричная, с диагональным преобладанием.
